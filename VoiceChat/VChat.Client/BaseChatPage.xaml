@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="VChat.BaseChatPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VChat"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/SplitViewStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid>
+        <Grid Grid.Column="0" Grid.Row="0" x:Name="ContentGrid" Margin="48,0,0,0" Background="Black" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch"/>
+        <SplitView HorizontalAlignment="Left" VerticalAlignment="Stretch"   OpenPaneLength="150" x:Name="ShellSplitView"
+               CompactPaneLength="48" DisplayMode="CompactOverlay"
+               IsPaneOpen="False" >
+            <SplitView.Pane>
+                <StackPanel x:Name="RadioButtonContainer">
+
+                    <RadioButton Tag="" Style="{StaticResource NavButtonStyle}"/>
+
+                    <RadioButton Checked="SplitPaneChecked"  Tag="" Style="{StaticResource NavButtonStyle}" />
+
+                    <RadioButton Checked="HomePaneChecked" Tag="" Command="{Binding NavCommand}" CommandParameter="MainPage" Content="Home" GroupName="Nav" Style="{StaticResource NavButtonStyle}" />
+                    <RadioButton Tag="" Checked="ProfileChecked" Command="{Binding NavCommand}" CommandParameter="ProfilePage" Content="Profile" GroupName="Nav" Style="{StaticResource NavButtonStyle}" />
+                    <RadioButton Tag="" Command="{Binding NavCommand}" CommandParameter="Friends" Content="Friends" GroupName="Nav" Style="{StaticResource NavButtonStyle}" />
+                    <RadioButton Tag="" Command="{Binding NavCommand}" CommandParameter="Settings" Content="Settings" GroupName="Nav" Style="{StaticResource NavButtonStyle}" />
+                    <RadioButton Tag="" Command="{Binding NavCommand}" CommandParameter="AboutPage" Content="About" GroupName="Nav" Style="{StaticResource NavButtonStyle}" />
+
+                </StackPanel>
+            </SplitView.Pane>
+        </SplitView>
+    </Grid>
+</Page>

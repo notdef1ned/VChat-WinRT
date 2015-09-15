@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="VChat.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VChat"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="MainGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+              Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="1*" />
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Height="24" Width="203" >Connect to chat server:</TextBlock>
+        <TextBlock FontSize="15" Grid.Row="1" Margin="0,13,10,13" Text="Host IP Address:" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox x:Name="tbHost" MaxHeight="30" MinHeight="30" MinWidth="300"   HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Margin="10,10,0,10" Grid.Column="1"/>
+        <TextBlock FontSize="15"  Grid.Row="3" Margin="0,20,20,20" Text="Port:" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"  TextAlignment="Right" Height="24" Width="40" />
+        <TextBox x:Name="tbPort" MaxHeight="30" MinHeight="30" MinWidth="300" Grid.Row="3" Grid.Column="1" Margin="10,10,0,10" HorizontalAlignment="Left" />
+        <TextBlock FontSize="15" Grid.Row="4" Margin="0,20,20,20" Text="UserName:" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox x:Name="tbUser" MaxHeight="30" MinHeight="30" MinWidth="300" Grid.Row="4" Grid.Column="1" Margin="10,10,0,10" HorizontalAlignment="Left"/>
+        <CheckBox x:Name="cbIsLocal"  FontSize="15" VerticalAlignment="Bottom" Margin="10" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left">Local server</CheckBox>
+        <Button x:Name="btnOk" FontSize="15"  Grid.Column="1" Content="Sign In"  VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10" Grid.Row="5" MinWidth="200" Click="btnOk_Click"/>
+        <ProgressRing x:Name ="progress" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" Foreground="White" MinHeight="50" MinWidth="50"/>
+        <Button x:Name="btnCreateServer" Click="btnCreateServer_Click"  Content="Create Server" MinWidth="200"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" FontSize="15" Grid.Column="1" Grid.Row="6"/>
+        <TextBlock Visibility="Collapsed" Grid.Column="0" Grid.ColumnSpan="2" FontSize="15" Margin="20" x:Name="signIn" HorizontalAlignment="Center"  Grid.Row="7" TextWrapping="Wrap" Text="Signing In..." VerticalAlignment="Top"/>
+    </Grid>
+
+</Page>
